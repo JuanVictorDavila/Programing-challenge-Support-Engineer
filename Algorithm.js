@@ -28,28 +28,46 @@ function getLargestNumber(arr) {
   return largestNumber;
 }
 
-function main() { 
-  const array = ["a", 10, "b", "hello", 122, 15];
+function verifyArray(arr) {
+  let verify;
 
-  const lettersOnlyArray = getLettersArray(array);
-  const numbersOnlyArray = getNumbersArray(array);
+  if(arr.length > 0) {
+    verify = true;
+  } else {
+    verify = false;
+  }
+
+  return verify;
+}
+
+function main(arr) {
+  let finalResult;
+  let arrayVerify = verifyArray(arr);
+
+  const lettersOnlyArray = getLettersArray(arr);
+  const numbersOnlyArray = getNumbersArray(arr);
   const largestNumber = getLargestNumber(numbersOnlyArray);
-  
-  const finalResult = `Array containing only letters: ${lettersOnlyArray}
-Array containing only numbers: ${numbersOnlyArray}
-Largest number: ${largestNumber}`;
 
+  if(arrayVerify) { 
+    finalResult = `Array containing only letters: ${lettersOnlyArray}
+    Array containing only numbers: ${numbersOnlyArray}
+    Largest number: ${largestNumber}`;
+  } else {
+    finalResult = `Array Vazio!`;
+  }
   // To see the result on the Teminal, uncomment the line bellow
   // console.log(finalResult);
-
   return finalResult;
 }
 
-main();
+//const arr = ["a", 10, "b", "hello", 122, 15];
+//const array = [];
+//main(arr);
 
 module.exports = {
   getLettersArray,
   getNumbersArray,
   getLargestNumber,
+  verifyArray,
   main
 }

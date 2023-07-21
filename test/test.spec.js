@@ -5,6 +5,7 @@ const {
   getLettersArray,
   getNumbersArray,
   getLargestNumber,
+  verifyArray,
   main
 } = require("../Algorithm");
 
@@ -32,12 +33,32 @@ describe("getLargestNumber", () => {
   });
 });
 
+describe("arrayVerify", () => {
+  it("should verify if array is not empty", () => {
+    const inputArray = ["a", 10, "b", "hello", 122, 15];
+    const result = verifyArray(inputArray);
+    expect(result).to.equal(true);
+  });
+
+  it("should verify if array is empty", () => {
+    const inputArray = [];
+    const result = verifyArray(inputArray);
+    expect(result).to.equal(false);
+  });
+});
+
 describe("main", () => {
   it("should return all informations", () => {
     const inputArray = ["a", 10, "b", "hello", 122, 15];
     const result = main(inputArray);
     expect(result).to.equal(`Array containing only letters: a,b,hello
-Array containing only numbers: 10,122,15
-Largest number: 122`)
+    Array containing only numbers: 10,122,15
+    Largest number: 122`);
+  });
+
+  it("should not return informations if array is empty", () => {
+    const inputArray = [];
+    const result = main(inputArray);
+    expect(result).to.equal(`Array Vazio!`)
   });
 });
