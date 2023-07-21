@@ -1,0 +1,23 @@
+{
+  "dependencies": {
+    "mocka": "^0.0.1",
+    "nyc": "^15.1.0"
+  },
+  "name": "programing-challenge",
+  "description": "## Challenge The objective of this challenge is to create an algorithm that traverses an array containing strings of letters and numbers.",
+  "version": "1.0.0",
+  "main": "Algorithm.js",
+  "directories": {
+    "test": "test"
+  },
+  "devDependencies": {
+    "chai": "^4.3.7",
+    "mocha": "^10.2.0"
+  },
+  "scripts": {
+    "test": "nyc mocha"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC"
+}
