@@ -1,6 +1,16 @@
-function getLettersArray(arr) {
+function verifyArray(array) {
+  let verify;
+  if(array.length > 0) {
+    verify = true;
+  } else {
+    verify = false;
+  }
+  return verify;
+}
+
+function getLettersArray(array) {
   const lettersArray = [];
-  for (let element of arr) {
+  for (let element of array) {
     if (typeof element === "string") {
       lettersArray.push(element);
     }
@@ -8,9 +18,9 @@ function getLettersArray(arr) {
   return lettersArray;
 }
 
-function getNumbersArray(arr) {
+function getNumbersArray(array) {
   const numbersArray = [];
-  for (let element of arr) {
+  for (let element of array) {
     if (typeof element === "number") {
       numbersArray.push(element);
     }
@@ -18,9 +28,9 @@ function getNumbersArray(arr) {
   return numbersArray;
 }
 
-function getLargestNumber(arr) {
+function getLargestNumber(array) {
   let largestNumber = -Infinity;
-  for (let number of arr) {
+  for (let number of array) {
     if (number > largestNumber) {
       largestNumber = number;
     }
@@ -28,24 +38,12 @@ function getLargestNumber(arr) {
   return largestNumber;
 }
 
-function verifyArray(arr) {
-  let verify;
-
-  if(arr.length > 0) {
-    verify = true;
-  } else {
-    verify = false;
-  }
-
-  return verify;
-}
-
-function main(arr) {
+function main(array) {
   let finalResult;
-  let arrayVerify = verifyArray(arr);
+  let arrayVerify = verifyArray(array);
 
-  const lettersOnlyArray = getLettersArray(arr);
-  const numbersOnlyArray = getNumbersArray(arr);
+  const lettersOnlyArray = getLettersArray(array);
+  const numbersOnlyArray = getNumbersArray(array);
   const largestNumber = getLargestNumber(numbersOnlyArray);
 
   if(arrayVerify) { 
@@ -56,13 +54,17 @@ function main(arr) {
     finalResult = `Array Vazio!`;
   }
   // To see the result on the Teminal, uncomment the line bellow
-  // console.log(finalResult);
+  //console.log(finalResult);
   return finalResult;
 }
+// To see the code runing on console, uncomment the line bellow
+//const array = ["a", 10, "b", "hello", 122, 15];
 
-//const arr = ["a", 10, "b", "hello", 122, 15];
+// To see the code runing with array empty, uncomment the line bellow and comment the line above
 //const array = [];
-//main(arr);
+
+// To call the main function to run the code, uncomment the line bellow
+//main(array);
 
 module.exports = {
   getLettersArray,

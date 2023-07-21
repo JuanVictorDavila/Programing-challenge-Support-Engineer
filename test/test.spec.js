@@ -9,7 +9,7 @@ const {
   main
 } = require("../Algorithm");
 
-describe("getLettersArray", () => {
+describe("Function getLettersArray", () => {
   it("should return an array containing only letters", () => {
     const inputArray = ["a", 10, "b", "hello", 122, 15];
     const result = getLettersArray(inputArray);
@@ -17,7 +17,7 @@ describe("getLettersArray", () => {
   });
 });
 
-describe("getNumbersArray", () => {
+describe("Function getNumbersArray", () => {
   it("should return an array containing only numbers", () => {
     const inputArray = ["a", 10, "b", "hello", 122, 15];
     const result = getNumbersArray(inputArray);
@@ -25,7 +25,7 @@ describe("getNumbersArray", () => {
   });
 });
 
-describe("getLargestNumber", () => {
+describe("Function getLargestNumber", () => {
   it("should return the largest number from the array", () => {
     const inputArray = [10, 5, 15, 8];
     const result = getLargestNumber(inputArray);
@@ -33,7 +33,7 @@ describe("getLargestNumber", () => {
   });
 });
 
-describe("arrayVerify", () => {
+describe("Function arrayVerify", () => {
   it("should verify if array is not empty", () => {
     const inputArray = ["a", 10, "b", "hello", 122, 15];
     const result = verifyArray(inputArray);
@@ -47,7 +47,7 @@ describe("arrayVerify", () => {
   });
 });
 
-describe("main", () => {
+describe("Function main", () => {
   it("should return all informations", () => {
     const inputArray = ["a", 10, "b", "hello", 122, 15];
     const result = main(inputArray);
@@ -56,7 +56,7 @@ describe("main", () => {
     Largest number: 122`);
   });
 
-  it("should not return informations if array is empty", () => {
+  it("should not return 'Array Vazio' if array is empty", () => {
     const inputArray = [];
     const result = main(inputArray);
     expect(result).to.equal(`Array Vazio!`)
