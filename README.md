@@ -76,8 +76,13 @@ To run the tests for this project, ensure you are in the "Programing-challenge" 
 Note: The tests are located in /test/test.js.
 
 ## Results
+
+Initial data for test: ["a", 10, "b", "hello", 122, 15]
+
 The algorithm should produce the following results:
 
 An array containing only letters: ["a", "b", "hello"]
+
 An array containing only numbers: [10, 122, 15]
+
 The largest number: 122
