@@ -37,7 +37,7 @@ function getLargestNumber(array) {
 }
 ```
 #### Function: verifyArray(array)
-The verifyArray function takes an array as an argument.
+The ```verifyArray``` function takes an array as an argument.
 It declares a variable called verify without assigning a value to it.
 Next, the function checks if the length of the array is greater than zero using an if statement. If the array has elements (length greater than zero), the variable verify is assigned the value true.
 Otherwise, if the array is empty (length equal to zero), the variable verify is assigned the value false.
