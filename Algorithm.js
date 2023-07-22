@@ -9,28 +9,20 @@ function verifyArray(array) {
 }
 
 function getLettersArray(array) {
-  const lettersArray = [];
-  for (let element of array) {
-    if (typeof element === "string") {
-      lettersArray.push(element);
-    }
-  }
+  const lettersArray = array.filter(element => isNaN(element));
+
   return lettersArray;
 }
 
 function getNumbersArray(array) {
-  const numbersArray = [];
-  for (let element of array) {
-    if (typeof element === "number") {
-      numbersArray.push(element);
-    }
-  }
+  const numbersArray = array.filter(element => !isNaN(element));
+
   return numbersArray;
 }
 
-function getLargestNumber(array) {
+function getLargestNumber(numbersOnlyArray) {
   let largestNumber = -Infinity;
-  for (let number of array) {
+  for (let number of numbersOnlyArray) {
     if (number > largestNumber) {
       largestNumber = number;
     }
@@ -54,17 +46,17 @@ function main(array) {
     finalResult = `Array Vazio!`;
   }
   // To see the result on the Teminal, uncomment the line bellow
-  //console.log(finalResult);
+  console.log(finalResult);
   return finalResult;
 }
 // To see the code runing on console, uncomment the line bellow
-//const array = ["a", 10, "b", "hello", 122, 15];
+const array = ["a", 10, "b", "hello", 122, 15];
 
 // To see the code runing with array empty, uncomment the line bellow and comment the line above
 //const array = [];
 
 // To call the main function to run the code, uncomment the line bellow
-//main(array);
+main(array);
 
 module.exports = {
   getLettersArray,
