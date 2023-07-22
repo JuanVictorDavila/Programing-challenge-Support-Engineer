@@ -19,50 +19,38 @@ function verifyArray(array) {
 }
 
 function getLettersArray(array) {
-  const lettersArray = [];
-  for (let element of array) {
-    if (typeof element === "string") {
-      lettersArray.push(element);
-    }
-  }
+  const lettersArray = array.filter(element => isNaN(element));
+
   return lettersArray;
 }
 
 function getNumbersArray(array) {
-  const numbersArray = [];
-  for (let element of array) {
-    if (typeof element === "number") {
-      numbersArray.push(element);
-    }
-  }
+  const numbersArray = array.filter(element => !isNaN(element));
+
   return numbersArray;
 }
 
 function getLargestNumber(array) {
-  let largestNumber = -Infinity;
-  for (let number of array) {
-    if (number > largestNumber) {
-      largestNumber = number;
-    }
-  }
+  const largestNumber = Math.max(...numbersOnlyArray);
+  
   return largestNumber;
 }
 ```
 #### Function: verifyArray(array)
-The verifyArray function takes an array as an argument.
+The ```verifyArray``` function takes an array as an argument.
 It declares a variable called verify without assigning a value to it.
 Next, the function checks if the length of the array is greater than zero using an if statement. If the array has elements (length greater than zero), the variable verify is assigned the value true.
 Otherwise, if the array is empty (length equal to zero), the variable verify is assigned the value false.
-Finally, the function returns the value of the verify variable, which will be true if the array has elements or false if it is empty.
+Finally, the function returns the value of the verify variable, which will be 'true' if the array has elements or 'false' if it is empty.
 
 #### Function: getLettersArray(array)
-This function receives an array as an argument and iterates through it using a ```for...of``` loop. It checks the type of each element using 'typeof' and appends the string elements to a new array called 'lettersArray'.
+This function receives an array as an argument and uses the filter method to create a new array called ```lettersArray``` that contains only the string elements from the original array.
 
 #### Function: getNumbersArray(array)
-Similarly, this function receives an array as an argument and iterates through it using a ```for...of``` loop. It checks the type of each element using 'typeof' and appends the number elements to a new array called 'numbersArray'.
+Similarly, this function receives an array as an argument and uses the filter method to create a new array called ```numbersArray``` that contains only the number elements from the original array.
 
 #### Function: getLargestNumber(array)
-The third function, getLargestNumber, receives an array of numbers as an argument and iterates through it using a ```for...of``` loop. It finds and returns the largest number using a comparison method and a variable 'largestNumber'.
+The ```getLargestNumber``` function takes an array of numbers as an argument and uses the 'Math.max' method with the spread operator (...) to find and return the largest number in the array.
 
 #### Main Function: main(array)
 The main function takes an array as an argument.
@@ -104,9 +92,9 @@ open the terminal and run ```npm start``` to run the code
 
 ## Testing
 
-To run the tests for this project, ensure you are in the "Programing-challenge" directory and execute the command npm run test in the terminal. The tests will check if the functions are passing and will provide coverage to ensure the project is working correctly.
+To run the tests for this project, ensure you are in the "Programing-challenge" directory and execute the command ```npm run test``` in the terminal. The tests will check if the functions are passing and will provide coverage to ensure the project is working correctly.
 
-Note: The tests are located in /test/test.js.
+Note: The tests are located in `/test/test.js`.
 
 ## Results
 
