@@ -21,12 +21,8 @@ function getNumbersArray(array) {
 }
 
 function getLargestNumber(numbersOnlyArray) {
-  let largestNumber = -Infinity;
-  for (let number of numbersOnlyArray) {
-    if (number > largestNumber) {
-      largestNumber = number;
-    }
-  }
+  let largestNumber = Math.max(...numbersOnlyArray);
+
   return largestNumber;
 }
 
