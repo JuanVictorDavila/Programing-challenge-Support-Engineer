@@ -21,15 +21,15 @@ function getNumbersArray(array) {
 }
 
 function getLargestNumber(numbersOnlyArray) {
-  let largestNumber = Math.max(...numbersOnlyArray);
+  const largestNumber = Math.max(...numbersOnlyArray);
 
   return largestNumber;
 }
 
 function main(array) {
   let finalResult;
-  let arrayVerify = verifyArray(array);
-
+  
+  const arrayVerify = verifyArray(array);
   const lettersOnlyArray = getLettersArray(array);
   const numbersOnlyArray = getNumbersArray(array);
   const largestNumber = getLargestNumber(numbersOnlyArray);
